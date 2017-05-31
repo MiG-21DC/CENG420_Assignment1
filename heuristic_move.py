@@ -44,6 +44,24 @@ h(n) for black chess) to the goals, the program will take another movement for t
 
 """
 
+"""
+README
+
+1.  Run the main program
+    python heuristic_move.py
+
+2.  Enter the heuristic level (1 or 2)
+
+3.  The computer will move first in white, a chess will display in number matrix format
+
+4.  Input the original coordinate of a black chess you want to move (from 1 to 9)
+
+5.  Input the coordinate of a empty space you want your chess to move to (from 1 to 9)
+
+Have fun!
+
+"""
+
 
 #   Print chess in square format
 def print_chess(chess):
@@ -259,7 +277,7 @@ def main():
                 continue
             else:
                 input_flag = False
-                       
+
         chess[orgposition] = 0
         chess[moveposition] = -1
 
