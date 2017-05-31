@@ -48,7 +48,10 @@ def heruistic(chess=get_init_chess()):
             print white
             print orgpos
             print movepos
-            newwhite = whitel
+            newwhite = []
+            newwhite.extend(white)
+            newempty = []
+            newempty.extend(empty)
             try:
                 newwhite.remove(orgpos)
             except Exception,e:
@@ -56,7 +59,6 @@ def heruistic(chess=get_init_chess()):
                 continue
             newwhite.append(movepos)
             newwhite.sort()
-            newempty = empty
             newempty.remove(movepos)
             newempty.append(orgpos)
             newempty.sort()
