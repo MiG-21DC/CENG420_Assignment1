@@ -220,29 +220,46 @@ def main():
         #     # end_flag = False
         #     continue
         orgposition = input('Please input the original coordinate of black chess (1 - 9)')
+        input_flag = False
         try:
             orgposition = int(orgposition)
+            if chess[moveposition] != -1:
+                input_flag = True
         except:
-            orgposition = 100
-        while chess[orgposition] != -1:
+            input_flag = True
+        while input_flag:
             orgposition = input('Wrong commend. Please input the original coordinate of black chess (1 - 9)')
             try:
                 orgposition = int(orgposition)
+                testvar = chess[orgposition]
             except:
-                orgposition = 100
-                
+                continue
+            if chess[orgposition] != -1:
+                continue
+            else:
+                input_flag = False
+
         moveposition = input('Please input the coordinate of black chess you want to move to (1 - 9)')
+        input_flag = False
         try:
             moveposition = int(moveposition)
+            if chess[moveposition] != 0:
+                input_flag = True
+
         except:
-            moveposition = 100
-        while chess[moveposition] != 0:
+            input_flag = True
+        while input_flag:
             moveposition = input('Wrong commend. Please input the coordinate of black chess you want to move to (1 - 9)')
             try:
                 moveposition = int(moveposition)
+                testvar = chess[moveposition]
             except:
-                moveposition = 100
-
+                continue
+            if chess[moveposition] != 0:
+                continue
+            else:
+                input_flag = False
+                       
         chess[orgposition] = 0
         chess[moveposition] = -1
 
